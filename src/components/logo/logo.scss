@@ -1,0 +1,16 @@
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__name {
+        font-family: 'Rubik';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--color-gray-33);
+        padding-left: 10px;
+    }
+}
+
+

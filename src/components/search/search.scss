@@ -1,0 +1,24 @@
+.search {
+    &__input {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 6px 0;
+        color: var(--color-gray-33);
+        border: none;
+        border-bottom: 1px solid var(--color-gray-33);
+        width: 320px;
+        font-weight: 600;
+        outline: none;
+    }
+
+    &__btn {
+        font-size: 16px;
+        line-height: 19px;
+        color: var(--color-red-e5);
+        font-weight: 600;
+        border: none;
+        background: none;
+        cursor: pointer;
+        outline: none;
+    }
+}

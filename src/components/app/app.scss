@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Rubik;
+    font-weight: 500;
+
+    &.overflow-hidden {
+        overflow: hidden;
+        padding-right: 18px;
+    }
+}
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

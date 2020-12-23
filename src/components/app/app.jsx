@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './app.scss';
+import Header from '../header/header';
+
 
 class App extends React.Component {
     static propTypes = {};
@@ -8,7 +11,7 @@ class App extends React.Component {
     render() {
         return (
             <div className='app'>
-                <h1>Project</h1>
+                <Header/>
             </div>
         );
     }

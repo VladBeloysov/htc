@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/app/app';
 import { configureStore } from './store/store';
+import './constants/constants.scss';
+import './constants/fonts.scss';
+
 const store = configureStore();
 
 const Application = () => (

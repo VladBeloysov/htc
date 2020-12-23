@@ -1,0 +1,29 @@
+.header {
+    padding: 35px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__auth-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__auth-name {
+        color: var(--color-gray-33);
+    }
+
+    &__log-out {
+        background: none;
+        color: var(--color-red-e5);
+        padding: 9px 16px;
+        width: auto;
+        font-weight: 700;
+
+        &:hover {
+            background: none;
+        }
+    }
+}
