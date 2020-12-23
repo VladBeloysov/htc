@@ -2,45 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a24aec-ae79-4b39-b8af-a347a3b7462d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubik.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubik.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubikblack.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubikblack.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubikbold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/fonts/Rubikbold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/images/films-new/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/images/films-new/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/images/films-new/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/images/films-new/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/channel/1st.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/channel/2x2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/channel/amedia.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/channel/rbc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/htc-cs-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/static/svg/sign.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/app/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth-btn/auth-btn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth-btn/auth-btn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/icon.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/logo/logo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/logo/logo.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/search.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/search.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/constants.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +46,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608718950682</updated>
-      <workItem from="1608718958589" duration="4473000" />
+      <workItem from="1608718958589" duration="5118000" />
+      <workItem from="1608751916834" duration="522000" />
     </task>
     <servers />
   </component>
@@ -98,6 +64,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './app.scss';
 import Header from '../header/header';
-
+import Footer from '../footer/footer'
 
 class App extends React.Component {
     static propTypes = {};
@@ -12,6 +12,8 @@ class App extends React.Component {
         return (
             <div className='app'>
                 <Header/>
+                <p>Контент</p>
+                <Footer />
             </div>
         );
     }
