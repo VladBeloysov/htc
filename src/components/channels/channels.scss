@@ -1,0 +1,102 @@
+.channels {
+    &__list {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        display: flex;
+        list-style-type: none;
+        background-color: var(--color-gray-f2);
+        margin-bottom: 15px;
+        padding: 20px 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__wrap-icon {
+        width: 40%;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__teleprogram {
+        width: 60%;
+    }
+
+    &__teleprogram-name {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--color-gray-33);
+        margin-bottom: 15px;
+    }
+
+    &__teleprogram-list {
+        padding: 0;
+    }
+
+    &__teleprogram-item {
+        list-style-type: none;
+        font-size: 16px;
+        line-height: 19px;
+        color: var(--color-gray-33);
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__teleprogram-item-time {
+        padding-right: 17px;
+    }
+}
+
+.scroller {
+    width: 1200px;
+    height: 665px;
+    box-sizing: content-box;
+    position: relative;
+
+    &__wrapper {
+        width: 1200px;
+        overflow: hidden;
+        position: relative;
+        padding-right: 16px;
+    }
+
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &__bar-wrap {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        background-color: var(--color-gray-f2);
+        border-radius: 2px;
+    }
+
+    &__bar {
+        display: block;
+        width: 4px;
+        height: 100px;
+        background-color: var(--color-gray-bd);
+        border-radius: 2px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        cursor: pointer;
+    }
+}
