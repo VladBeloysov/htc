@@ -1,0 +1,101 @@
+.comments {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--color-gray-33);
+
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    &__form {
+        position: relative;
+        display: flex;
+    }
+
+    &__textarea {
+        background-color: rgba(229, 38, 30, 0.15);
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 19px;
+        border: none;
+        width: 100%;
+        height: 110px;
+        outline: none;
+        color: var(--color-red-e5);
+        resize: none;
+        padding: 16px;
+        box-sizing: border-box;
+
+        &::-webkit-input-placeholder { color: var(--color-red-e5); }
+        &::-moz-placeholder          { color: var(--color-red-e5); }
+        &:-moz-placeholder           { color: var(--color-red-e5); }
+        &:-ms-input-placeholder      { color: var(--color-red-e5); }
+
+        &_disabled {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &__btn-publish {
+        background-color: var(--color-red-e5);
+        color: var(--color-white);
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 35px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: calc(100% + 15px);
+
+        &_disabled {
+            background-color: var(--color-red-86);
+        }
+    }
+
+    &__item {
+        background-color: var(--color-gray-f2);
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    &__name {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0;
+    }
+
+    &__btn-close {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        right: -30px;
+        top: 0;
+        outline: none;
+    }
+
+    &__ico-close {
+        width: 15px;
+        height: 15px;
+    }
+}
