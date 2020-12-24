@@ -6,14 +6,19 @@ import './auth-btn.scss';
 const cn = block('auth-btn');
 class AuthBtn extends React.Component {
     static propTypes = {
-        text: PropTypes.string.isRequired
+        text: PropTypes.string.isRequired,
+        onClick: PropTypes.func.isRequired
+    };
+
+    handleClick = () => {
+        this.props.onClick && this.props.onClick();
     };
 
     render() {
         const { text } = this.props;
 
         return (
-            <button className={ cn() }>{ text }</button>
+            <button className={ cn() } onClick={ this.handleClick }>{ text }</button>
         );
     }
 }
