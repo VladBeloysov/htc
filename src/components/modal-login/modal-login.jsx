@@ -17,25 +17,27 @@ class ModalLogin extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { login: '', password: '', save: false };
+        this.state = { login: '', password: '', remember: false };
     }
 
     handleChangeLogin = (event) => {
-        this.setState({login: event.target.value});
+        this.setState({ login: event.target.value });
     }
 
     handleChangePassword = (event) => {
-        this.setState({password: event.target.value});
+        this.setState({ password: event.target.value });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onFormAuth({ login: this.state.login, password: this.state.password, save: this.state.save});
+        this.props.onFormAuth({ login: this.state.login, password: this.state.password, remember: this.state.remember });
     }
 
     checkSaveChange = (event) => {
-        this.setState({ save: event.target.checked });
+        this.setState(prevState => ({ remember: !prevState.remember }));
     }
+
+
 
     render() {
         const { hideModal, messageError } = this.props;
@@ -45,7 +47,7 @@ class ModalLogin extends React.Component {
                     <div className={ cn('title') }>Вход</div>
                     <input type="text" value={ this.state.login } onChange={ this.handleChangeLogin } placeholder="Логин" className={ cn('input') }/>
                     <input type="password" value={ this.state.password } onChange={ this.handleChangePassword } placeholder="Пароль" className={ cn('input') }/>
-                    <input onChange={ this.checkSaveChange } type="checkbox" id="remember" className={ cn('checkbox') }/>
+                    <input onChange={ this.checkSaveChange } type="checkbox" id="remember" name="remember" className={ cn('checkbox') } checked={ this.state.remember }/>
                     <label className={ cn('label') } htmlFor="remember">
                         <Icon className={ cn('icon') } icon={ icoCheck } width="10px" height="8px"/>
                         Запомнить

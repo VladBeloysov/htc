@@ -37,14 +37,14 @@ class App extends React.Component {
         }
     }
 
-    authorizationSuccess = (id, save) => {
+    authorizationSuccess = (id, remember) => {
         const { users } = this.props;
         console.log('users', users);
         this.props.authorizationUser(id);
-        if (save) {
+        if (remember) {
             localStorage.setItem('userId', id);
         }
-        this.props.addMessageError('нет ошибок');
+        this.props.addMessageError(null);
         this.isUser = true;
         this.user = users.filter((item) => item.id === id);
         this.hideModal();
@@ -62,7 +62,7 @@ class App extends React.Component {
         users.map((item) => {
             if (item.login === auth.login) {
                 if (item.password === auth.password) {
-                    this.authorizationSuccess(item.id, auth.save);
+                    this.authorizationSuccess(item.id, auth.remember);
                 } else {
                     this.authorizationError(NOT_CORRECT_PASSWORD);
                 }

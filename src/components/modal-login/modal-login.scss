@@ -78,8 +78,15 @@
     &__checkbox {
         display: none;
 
-        &:checked + .modal-login__label .modal-login__icon {
-            display: inline-block;
+        &:checked + .modal-login__label:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #333333;
+            position: absolute;
+            left: 3px;
+            top: 4px;
         }
     }
 
@@ -98,6 +105,9 @@
         color: var(--color-red-cc);
     }
 
+    .auth-btn {
+        margin: 0 auto;
+    }
 }
 
 .overlay {
