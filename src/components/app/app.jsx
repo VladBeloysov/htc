@@ -6,6 +6,7 @@ import isNil from "lodash/isNil";
 import './app.scss';
 import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE } from '../../constants/routes';
 import { authorizationUser, addMessageError } from "../../store/actions";
+import { NOT_CORRECT_PASSWORD, NOT_CORRECT_USER } from '../../constants/locale/ru';
 
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -43,50 +44,32 @@ class App extends React.Component {
         if (save) {
             localStorage.setItem('userId', id);
         }
-        console.log('Вы авторизованы, ID:', id);
-
-        this.props.addMessageError(null);
-
+        this.props.addMessageError('нет ошибок');
         this.isUser = true;
         this.user = users.filter((item) => item.id === id);
-        console.log(this.user);
-        // this.hideModal();
+        this.hideModal();
     };
 
-    authorizationErrorPassword = () => {
-        console.log('Некорректный пароль!');
-
-        this.props.addMessageError('Некорректный пароль!');
-
-        this.isUser = true;
+    authorizationError = (message) => {
+        this.props.addMessageError(message);
         this.props.authorizationUser(null);
-    };
-
-    authorizationErrorUser = () => {
-        console.log('Нет такого пользователя!');
-
-        this.props.addMessageError('Нет такого пользователя!');
-
-        this.props.authorizationUser(null);
+        this.isUser = false;
     };
 
     handleAuthorization = (auth) => {
         this.isUser = false;
         const { users } = this.props;
         users.map((item) => {
-            if ((item.login === auth.login) && (item.password !== auth.password)) {
-                if (this.authorizationErrorPassword()) {
-                    if ((item.login === auth.login) && (item.password === auth.password)) {
-                        this.authorizationSuccess(item.id, auth.save)
-                    }
+            if (item.login === auth.login) {
+                if (item.password === auth.password) {
+                    this.authorizationSuccess(item.id, auth.save);
+                } else {
+                    this.authorizationError(NOT_CORRECT_PASSWORD);
                 }
-
+            } else {
+                this.authorizationError(NOT_CORRECT_USER);
             }
-
         });
-        if (!this.isUser) {
-            this.authorizationErrorUser();
-        }
     };
 
     hideModal = () => {
@@ -102,15 +85,15 @@ class App extends React.Component {
     };
 
     handleLogOut = () => {
-        // this.hideModal();
         this.props.authorizationUser(null);
         localStorage.removeItem('userId');
         this.user = null;
+        this.isUser = false;
     };
-
 
     render() {
         const { activeModal } = this.state;
+        const { messageError } = this.props;
         return (
             <div className='app'>
                 <Header logIn={ this.handleLogIn } logOut={ this.handleLogOut } user={ this.user } />
@@ -136,7 +119,7 @@ class App extends React.Component {
                         <ModalLogin
                             onFormAuth={this.handleAuthorization}
                             hideModal={this.hideModal}
-                            messageError={this.props.messageError}
+                            messageError={ messageError }
                         /> : null
                 }
             </div>

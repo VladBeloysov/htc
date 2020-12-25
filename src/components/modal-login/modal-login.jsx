@@ -11,7 +11,8 @@ const cn = block('modal-login');
 class ModalLogin extends React.Component {
     static propTypes = {
         onFormAuth: PropType.func.isRequired,
-        hideModal: PropType.func.isRequired
+        hideModal: PropType.func.isRequired,
+        messageError: PropType.string
     };
 
     constructor(props) {
@@ -50,7 +51,7 @@ class ModalLogin extends React.Component {
                         Запомнить
                     </label>
                     <AuthBtn className={ cn('auth-button') } text='Войти' onClick={ () => {}} />
-                    <div className={ cn('message') }>{ messageError ? messageError : '' }</div>
+                    <div className={ cn('message') }>{ messageError }</div>
                 </form>
                 <div className="overlay" id="js-overlay" onClick={ hideModal }></div>
             </div>

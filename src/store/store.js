@@ -20,7 +20,7 @@ function getDevTools() {
 export function configureStore(initialState = {
     filmsNew: [0, 1, 2, 0, 3, 1, 2, 3],
     currentUser: null,
-    messageError: null,
+    messageError: 'нет ошибок',
     users: [
         {
             id: 0,
