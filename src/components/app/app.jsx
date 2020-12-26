@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import './app.scss';
-import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE } from '../../constants/routes';
+import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE, PAGE_GENRE, PAGE_SEARCH } from '../../constants/routes';
 import { authorizationUser, addMessageError } from "../../store/actions";
 import { NOT_CORRECT_PASSWORD, NOT_CORRECT_USER } from '../../constants/locale/ru';
 
@@ -14,6 +14,8 @@ import ModalLogin from '../modal-login/modal-login';
 import PageMain from '../page-main/page-main';
 import PageDetail from '../page-detail/page-detail';
 import PageError from '../page-error/page-error';
+import PageGenre from '../page-genre/page-genre';
+import PageSearch from '../page-search/page-search';
 
 class App extends React.Component {
     static propTypes = {
@@ -107,6 +109,16 @@ class App extends React.Component {
                         exact={ true }
                         path={ DETAIL_PAGE_ROUTE }
                         component={ PageDetail }
+                    />
+                    <Route
+                        exact={ true }
+                        path={ PAGE_GENRE }
+                        component={ PageGenre }
+                    />
+                    <Route
+                        exact={ true }
+                        path={ PAGE_SEARCH }
+                        component={ PageSearch }
                     />
                     <Route
                         path='*'
