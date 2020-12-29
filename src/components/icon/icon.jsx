@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import IconsSVG from './icons.svg';
 
 class Icon extends React.PureComponent {
     static propTypes = {
         className: PropTypes.object.isRequired,
-        icon: PropTypes.string.isRequired
     }
 
     render() {
-        const { className, icon, width, height } = this.props;
+        const { name, width, height, className } = this.props;
         return (
-            <svg className={ `icon ${className}` } viewBox={ icon.viewBox } width={ `${width}` } height={ `${height}` }>
-                <use xlinkHref={ `#${icon.id}` }/>
+            <svg className={`icon icon-${name} ${className}`} width={width} height={height}>
+                <use xlinkHref={`${IconsSVG}#${name}`} />
             </svg>
         );
     }

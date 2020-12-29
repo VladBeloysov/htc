@@ -77,16 +77,8 @@
 
     &__checkbox {
         display: none;
-
-        &:checked + .modal-login__label:after {
-            content: '';
+        &:checked + .modal-login__label .modal-login__icon {
             display: block;
-            width: 10px;
-            height: 10px;
-            background-color: #333333;
-            position: absolute;
-            left: 3px;
-            top: 4px;
         }
     }
 

@@ -6,10 +6,6 @@ import Films3 from "../assets/static/images/films-new/3.jpg";
 import Films4 from "../assets/static/images/films-new/4.jpg";
 
 import reducers from './reducers';
-import channelFirst from "../assets/static/svg/channel/1st.svg";
-import channel2x2 from "../assets/static/svg/channel/2x2.svg";
-import channelRbc from "../assets/static/svg/channel/rbc.svg";
-import channelAmedia from "../assets/static/svg/channel/amedia.svg";
 
 function getDevTools() {
     return process.env.NODE_ENV !== 'production' && (typeof window === 'object') && window.devToolsExtension
@@ -178,7 +174,7 @@ export function configureStore(initialState = {
     channels: [
         {
             name: 'Первый канал',
-            nameIco: channelFirst,
+            nameIco: '1st',
             widthIco: '50px',
             heigthIco: '64px',
             teleprogram: [
@@ -198,7 +194,7 @@ export function configureStore(initialState = {
         },
         {
             name: '2x2',
-            nameIco: channel2x2,
+            nameIco: '2x2',
             widthIco: '114px',
             heigthIco: '49px',
             teleprogram: [
@@ -218,7 +214,7 @@ export function configureStore(initialState = {
         },
         {
             name: 'РБК',
-            nameIco: channelRbc,
+            nameIco: 'rbc',
             widthIco: '55px',
             heigthIco: '54px',
             teleprogram: [
@@ -238,7 +234,7 @@ export function configureStore(initialState = {
         },
         {
             name: 'AMEDIA PREMIUM',
-            nameIco: channelAmedia,
+            nameIco: 'amedia',
             widthIco: '64px',
             heigthIco: '64px',
             teleprogram: [
@@ -258,7 +254,7 @@ export function configureStore(initialState = {
         },
         {
             name: 'Первый канал',
-            nameIco: channelFirst,
+            nameIco: '1st',
             widthIco: '50px',
             heigthIco: '64px',
             teleprogram: [
@@ -278,7 +274,7 @@ export function configureStore(initialState = {
         },
         {
             name: '2x2',
-            nameIco: channel2x2,
+            nameIco: '2x2',
             widthIco: '114px',
             heigthIco: '49px',
             teleprogram: [
@@ -298,7 +294,7 @@ export function configureStore(initialState = {
         },
         {
             name: 'РБК',
-            nameIco: channelRbc,
+            nameIco: 'rbc',
             widthIco: '55px',
             heigthIco: '54px',
             teleprogram: [
@@ -318,7 +314,7 @@ export function configureStore(initialState = {
         },
         {
             name: 'AMEDIA PREMIUM',
-            nameIco: channelAmedia,
+            nameIco: 'amedia',
             widthIco: '64px',
             heigthIco: '64px',
             teleprogram: [

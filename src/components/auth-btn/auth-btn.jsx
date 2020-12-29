@@ -15,10 +15,10 @@ class AuthBtn extends React.Component {
     };
 
     render() {
-        const { text } = this.props;
+        const { text, login } = this.props;
 
         return (
-            <button className={ cn() } onClick={ this.handleClick }>{ text }</button>
+            <button className={ cn({'login': login}) } onClick={ this.handleClick }>{ text }</button>
         );
     }
 }

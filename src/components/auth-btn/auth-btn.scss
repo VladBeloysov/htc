@@ -12,6 +12,18 @@
     width: 113px;
     transition: background-color .3s ease;
 
+    &.auth-btn_login {
+        background: none;
+        color: var(--color-red-e5);
+        padding: 9px 16px;
+        width: auto;
+        font-weight: 700;
+
+        &:hover {
+            background: none;
+        }
+    }
+
     &_align-center {
         align-self: center;
     }

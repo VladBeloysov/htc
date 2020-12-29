@@ -41,7 +41,7 @@ class Header extends React.Component {
                             : (
                                 <div className={ cn('auth-wrap') }>
                                     <span className={ cn('auth-name') }>{ user[0].name }</span>
-                                    <AuthBtn className={ cn('log-out') } onClick={ this.handleClickOut } text='Выйти' />
+                                    <AuthBtn login={ true } onClick={ this.handleClickOut } text='Выйти' />
                                 </div>
                             )
                     }

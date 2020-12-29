@@ -11,7 +11,12 @@ class Logo extends React.Component {
     render() {
         return (
             <Link className={ cn() } to={ MAIN_PAGE_ROUTE }>
-                <Icon className={ cn('icon') } icon={ icoLogo } width="37px" height="36px"/>
+                <Icon
+                    name="sign"
+                    width="37px"
+                    height="36px"
+                    className={ cn('icon') }
+                />
                 <div className={ cn('name') }>Видеосервис</div>
             </Link>
         );

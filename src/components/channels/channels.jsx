@@ -179,7 +179,12 @@ class Channels extends React.Component {
                                 { channels.map((item, key) =>
                                     <li key={ key } className={ cn('item') }>
                                         <div className={ cn('wrap-icon') }>
-                                            <Icon className={ cn('icon') } icon={ item.nameIco } width={ item.widthIco } height={ item.heigthIco }/>
+                                            <Icon
+                                                name={ item.nameIco }
+                                                width={ item.widthIco }
+                                                height={ item.heigthIco }
+                                                className={ cn('icon') }
+                                            />
                                         </div>
                                         <div className={ cn('teleprogram') }>
                                             <div className={ cn('teleprogram-name') }>{ item.name }</div>

@@ -49,7 +49,12 @@ class ModalLogin extends React.Component {
                     <input type="password" value={ this.state.password } onChange={ this.handleChangePassword } placeholder="Пароль" className={ cn('input') }/>
                     <input onChange={ this.checkSaveChange } type="checkbox" id="remember" name="remember" className={ cn('checkbox') } checked={ this.state.remember }/>
                     <label className={ cn('label') } htmlFor="remember">
-                        <Icon className={ cn('icon') } icon={ icoCheck } width="10px" height="8px"/>
+                        <Icon
+                            name="check"
+                            width="10px"
+                            height="8px"
+                            className={ cn('icon') }
+                        />
                         Запомнить
                     </label>
                     <AuthBtn className={ cn('auth-button') } text='Войти' onClick={ () => {}} />

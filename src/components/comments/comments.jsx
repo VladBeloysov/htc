@@ -2,7 +2,6 @@ import React from 'react';
 import PropType from 'prop-types';
 import { block } from 'bem-cn';
 import './comments.scss';
-import icoClose from "../../assets/static/svg/close.svg";
 import Icon from "../icon/icon";
 import isNil from "lodash/isNil";
 
@@ -35,7 +34,10 @@ class Comments extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onCommentAdd(this.state.text);
+        if (this.state.text.length > 0) {
+            this.props.onCommentAdd(this.state.text);
+            this.setState({ text: '' });
+        }
     };
 
     handleClickDelete = (event) => {
@@ -58,7 +60,12 @@ class Comments extends React.Component {
                             <article className={cn('item')} key={ item.id }>
                                 {
                                     item.userId === currentUser ? (<button onClick={ this.handleClickDelete } className={cn('btn-close')} id={ item.id } type="button">
-                                        <Icon className={cn('ico-close')} icon={icoClose} width="15px" height="15px"/>
+                                        <Icon
+                                            name="close"
+                                            width="15px"
+                                            height="15px"
+                                            className={ cn('ico-close') }
+                                        />
                                     </button>) : null
                                 }
                                 <div className={cn('name')}>{ users[item.userId].name }</div>
