@@ -40,15 +40,14 @@ class App extends React.Component {
     }
 
     authorizationSuccess = (id, remember) => {
-        const { users } = this.props;
-        console.log('users', users);
+        const { users, currentUser } = this.props;
         this.props.authorizationUser(id);
         if (remember) {
             localStorage.setItem('userId', id);
         }
         this.props.addMessageError(null);
         this.isUser = true;
-        this.user = users.filter((item) => item.id === id);
+        this.user = users[currentUser];
         this.hideModal();
     };
 
