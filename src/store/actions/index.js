@@ -2,7 +2,9 @@ import {
     ACTIONS_AUTHORIZATION_USER,
     ACTIONS_MESSAGE_ERROR,
     ACTIONS_ADD_COMMENT,
-    ACTIONS_DELETE_COMMENT
+    ACTIONS_DELETE_COMMENT,
+    ACTIONS_REDIRECT_TO_SEARCH,
+    ACTIONS_ADD_SEARCH_STR
 } from '../../constants/actions';
 
 export function authorizationUser(id) {
@@ -32,5 +34,19 @@ export function deleteComment(id) {
     return {
         type: ACTIONS_DELETE_COMMENT,
         payload: id
+    }
+}
+
+export function redirectToSearch(flag) {
+    return {
+        type: ACTIONS_REDIRECT_TO_SEARCH,
+        payload: flag
+    }
+}
+
+export function addSearchStr(str) {
+    return {
+        type: ACTIONS_ADD_SEARCH_STR,
+        payload: str
     }
 }

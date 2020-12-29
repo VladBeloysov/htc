@@ -2,7 +2,9 @@ import {
     ACTIONS_AUTHORIZATION_USER,
     ACTIONS_MESSAGE_ERROR,
     ACTIONS_ADD_COMMENT,
-    ACTIONS_DELETE_COMMENT
+    ACTIONS_DELETE_COMMENT,
+    ACTIONS_REDIRECT_TO_SEARCH,
+    ACTIONS_ADD_SEARCH_STR
 } from '../../constants/actions';
 
 export default function (state = {}, { type, payload }) {
@@ -46,6 +48,20 @@ export default function (state = {}, { type, payload }) {
             return {
                 ...state,
                 comments: state.comments.filter(item => item.id !== Number.parseInt(payload))
+            };
+        }
+
+        case ACTIONS_REDIRECT_TO_SEARCH: {
+            return {
+                ...state,
+                redirect: payload
+            };
+        }
+
+        case ACTIONS_ADD_SEARCH_STR: {
+            return {
+                ...state,
+                searchStr: payload
             };
         }
 

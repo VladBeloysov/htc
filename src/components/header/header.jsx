@@ -34,7 +34,7 @@ class Header extends React.Component {
             <div className={ cn() }>
                 <div className="container">
                     <Logo />
-                    <Search />
+                    <Search onFormSearch={ this.props.onFormSearch } />
                     {
                         isNil(user)
                             ? <AuthBtn onClick={ this.handleClickIn } text='Войти' />
@@ -43,7 +43,6 @@ class Header extends React.Component {
                                     <span className={ cn('auth-name') }>{ user[0].name }</span>
                                     <AuthBtn className={ cn('log-out') } onClick={ this.handleClickOut } text='Выйти' />
                                 </div>
-
                             )
                     }
                 </div>

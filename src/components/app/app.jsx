@@ -1,11 +1,11 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import './app.scss';
 import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE, PAGE_GENRE, PAGE_SEARCH } from '../../constants/routes';
-import { authorizationUser, addMessageError } from "../../store/actions";
+import { authorizationUser, addMessageError, redirectToSearch, addSearchStr } from "../../store/actions";
 import { NOT_CORRECT_PASSWORD, NOT_CORRECT_USER } from '../../constants/locale/ru';
 
 import Header from '../header/header';
@@ -93,13 +93,29 @@ class App extends React.Component {
         this.isUser = false;
     };
 
+    handleSearch = (search) => {
+        this.props.addSearchStr(search.str);
+        this.props.redirectToSearch(true);
+    };
+
     render() {
         const { activeModal } = this.state;
-        const { messageError } = this.props;
+        const { messageError, redirect } = this.props;
+
         return (
             <div className='app'>
-                <Header logIn={ this.handleLogIn } logOut={ this.handleLogOut } user={ this.user } />
+                <Header onFormSearch={ this.handleSearch } logIn={ this.handleLogIn } logOut={ this.handleLogOut } user={ this.user } />
                 <Switch>
+                    {
+                        (redirect) ?
+                            <div>
+                                <Route
+                                    path="/search"
+                                    component={ PageSearch }
+                                />
+                                <Redirect component={ PageSearch } to={`/search`} />
+                            </div> : null
+                    }
                     <Route
                         exact={ true }
                         path={ MAIN_PAGE_ROUTE }
@@ -114,11 +130,6 @@ class App extends React.Component {
                         exact={ true }
                         path={ PAGE_GENRE }
                         component={ PageGenre }
-                    />
-                    <Route
-                        exact={ true }
-                        path={ PAGE_SEARCH }
-                        component={ PageSearch }
                     />
                     <Route
                         path='*'
@@ -140,8 +151,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { users: state.users, currentUser: state.currentUser, messageError: state.messageError };
+    return { users: state.users, currentUser: state.currentUser, messageError: state.messageError, redirect: state.redirect};
 };
 
-const mapDispatchToProps = { authorizationUser, addMessageError };
+const mapDispatchToProps = { authorizationUser, addMessageError, redirectToSearch, addSearchStr };
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
