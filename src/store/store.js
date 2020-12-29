@@ -334,6 +334,19 @@ export function configureStore(initialState = {
         }
     ]
 }) {
+
+    const loadState = () => {
+        try {
+            const serialisedState = window.localStorage.getItem('app_state');
+            if (!serialisedState) return undefined;
+            return JSON.parse(serialisedState);
+        } catch (err) {
+            return undefined;
+        }
+    };
+    const oldState = loadState();
+    const currentState = oldState ? oldState : initialState;
+
     let middlewares = [thunk];
 
     let enhanser = compose(
@@ -343,7 +356,7 @@ export function configureStore(initialState = {
 
     return createStore(
         reducers,
-        initialState,
+        currentState,
         enhanser
     );
 }
