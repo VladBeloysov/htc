@@ -22,7 +22,7 @@ export function configureStore(initialState = {
     users: [
         {
             id: 0,
-            login: "kostya",
+            login: "kos",
             password: "12345",
             name: "Константин К."
         },

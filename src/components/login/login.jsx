@@ -12,8 +12,8 @@ class Login extends React.Component {
     }
 
     handleClickName = () => {
-        const { name } = this.props;
-        this.setState({ edit: true, newName: name });
+        const { users, currentUser } = this.props;
+        this.setState({ edit: true, newName: users[currentUser].name });
     };
 
     handleChangeName = (event) => {
@@ -22,23 +22,27 @@ class Login extends React.Component {
 
     handleBlur = () => {
         this.setState({ edit: false });
-        //:TODO Записать в store новое имя (action + reducer)
         this.props.editNameUser(this.state.newName);
+
     };
 
     render() {
-        const { name } = this.props;
+        const { users, currentUser } = this.props;
         const { edit, newName } = this.state;
 
         return (
             edit ?
                 <input type="text" onBlur={ this.handleBlur } onChange={ this.handleChangeName } value={ newName } />
-            : <div onClick={ this.handleClickName } className={ cn('name') }>{ newName || name }</div>
+            : <div onClick={ this.handleClickName } className={ cn('name') }>{ users[currentUser].name }</div>
         );
     }
 }
 
-const mapStateToProps = () => {return{}};
+const mapStateToProps = (state) => {
+    return {
+        users: state.users, currentUser: state.currentUser
+    }
+};
 const mapDispatchToProps = { editNameUser };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

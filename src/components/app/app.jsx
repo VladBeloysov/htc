@@ -60,17 +60,17 @@ class App extends React.Component {
     handleAuthorization = (auth) => {
         this.isUser = false;
         const { users } = this.props;
-        users.map((item) => {
-            if (item.login === auth.login) {
-                if (item.password === auth.password) {
-                    this.authorizationSuccess(item.id, auth.remember);
-                } else {
-                    this.authorizationError(NOT_CORRECT_PASSWORD);
-                }
+        const userMas = users.filter((item) => item.login === auth.login );
+
+        if (userMas[0] && (userMas[0].login === auth.login)) {
+            if (userMas[0].password === auth.password) {
+                return this.authorizationSuccess(userMas[0].id, auth.remember);
             } else {
-                this.authorizationError(NOT_CORRECT_USER);
+                return this.authorizationError(NOT_CORRECT_PASSWORD);
             }
-        });
+        } else {
+            return this.authorizationError(NOT_CORRECT_USER);
+        }
     };
 
     hideModal = () => {
@@ -99,11 +99,11 @@ class App extends React.Component {
 
     render() {
         const { activeModal } = this.state;
-        const { messageError, redirect } = this.props;
+        const { messageError, redirect, currentUser } = this.props;
 
         return (
             <div className='app'>
-                <Header onFormSearch={ this.handleSearch } logIn={ this.handleLogIn } logOut={ this.handleLogOut } user={ this.user } />
+                <Header currentUser={ currentUser } onFormSearch={ this.handleSearch } logIn={ this.handleLogIn } logOut={ this.handleLogOut } />
                 <Switch>
                     {
                         (redirect) ?

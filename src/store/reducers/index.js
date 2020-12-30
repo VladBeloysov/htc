@@ -67,13 +67,15 @@ export default function (state = {}, { type, payload }) {
         }
 
         case ACTIONS_EDIT_NAME_USER: {
+            const newUsers = state.users;
+            newUsers.map(item => {
+                if(item.id === state.currentUser) {
+                    item.name = payload;
+                }
+            })
             return {
                 ...state,
-                users: state.users.map(item => {
-                    if(item.id === state.currentUser) {
-                        item.name = payload;
-                    }
-                })
+                users: newUsers
             };
         }
 

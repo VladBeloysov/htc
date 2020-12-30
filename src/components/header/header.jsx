@@ -16,9 +16,6 @@ class Header extends React.Component {
         logOut: PropTypes.func.isRequired,
     };
 
-    static defaultProps = {
-        user: null
-    };
 
     handleClickIn = () => {
         this.props.logIn && this.props.logIn();
@@ -29,7 +26,7 @@ class Header extends React.Component {
     };
 
     render() {
-        const { user } = this.props;
+        const { currentUser } = this.props;
 
         return (
             <div className={ cn() }>
@@ -37,11 +34,11 @@ class Header extends React.Component {
                     <Logo />
                     <Search onFormSearch={ this.props.onFormSearch } />
                     {
-                        isNil(user)
+                        isNil(currentUser)
                             ? <AuthBtn onClick={ this.handleClickIn } text='Войти' />
                             : (
                                 <div className={ cn('auth-wrap') }>
-                                    <Login name={ user.name } />
+                                    <Login />
                                     <AuthBtn login={ true } onClick={ this.handleClickOut } text='Выйти' />
                                 </div>
                             )
