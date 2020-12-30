@@ -4,7 +4,8 @@ import {
     ACTIONS_ADD_COMMENT,
     ACTIONS_DELETE_COMMENT,
     ACTIONS_REDIRECT_TO_SEARCH,
-    ACTIONS_ADD_SEARCH_STR
+    ACTIONS_ADD_SEARCH_STR,
+    ACTIONS_EDIT_NAME_USER
 } from '../../constants/actions';
 
 export default function (state = {}, { type, payload }) {
@@ -62,6 +63,17 @@ export default function (state = {}, { type, payload }) {
             return {
                 ...state,
                 searchStr: payload
+            };
+        }
+
+        case ACTIONS_EDIT_NAME_USER: {
+            return {
+                ...state,
+                users: state.users.map(item => {
+                    if(item.id === state.currentUser) {
+                        item.name = payload;
+                    }
+                })
             };
         }
 

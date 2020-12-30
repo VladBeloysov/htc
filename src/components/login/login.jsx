@@ -1,6 +1,8 @@
 import React from 'react';
 import { block } from 'bem-cn';
 import './login.scss';
+import {connect} from "react-redux";
+import { editNameUser } from "../../store/actions/index";
 
 const cn = block('login');
 class Login extends React.Component {
@@ -21,6 +23,7 @@ class Login extends React.Component {
     handleBlur = () => {
         this.setState({ edit: false });
         //:TODO Записать в store новое имя (action + reducer)
+        this.props.editNameUser(this.state.newName);
     };
 
     render() {
@@ -35,4 +38,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+const mapStateToProps = () => {return{}};
+const mapDispatchToProps = { editNameUser };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

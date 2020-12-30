@@ -4,7 +4,8 @@ import {
     ACTIONS_ADD_COMMENT,
     ACTIONS_DELETE_COMMENT,
     ACTIONS_REDIRECT_TO_SEARCH,
-    ACTIONS_ADD_SEARCH_STR
+    ACTIONS_ADD_SEARCH_STR,
+    ACTIONS_EDIT_NAME_USER
 } from '../../constants/actions';
 
 export function authorizationUser(id) {
@@ -48,5 +49,12 @@ export function addSearchStr(str) {
     return {
         type: ACTIONS_ADD_SEARCH_STR,
         payload: str
+    }
+}
+
+export function editNameUser(name) {
+    return {
+        type: ACTIONS_EDIT_NAME_USER,
+        payload: name
     }
 }
