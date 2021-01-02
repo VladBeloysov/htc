@@ -1,4 +1,12 @@
 .search {
+    @media (max-width: 1020px) {
+        margin-top: 70px;
+    }
+
+    @media (max-width: 460px) {
+        width: calc(100% - 20px);
+    }
+
     &__input {
         font-size: 16px;
         line-height: 19px;
@@ -9,6 +17,10 @@
         width: 320px;
         font-weight: 600;
         outline: none;
+
+        @media (max-width: 460px) {
+            width: calc(100% - 60px);
+        }
     }
 
     &__btn {

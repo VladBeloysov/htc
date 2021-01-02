@@ -26,12 +26,10 @@ class PageSearch extends React.Component {
         return (
             <div className={ cn() }>
                 <div className="container">
-                    Поиск: <strong>{ searchStr }</strong>
-
                     <div className="page-main">
                         <div className="tabs-content">
                             <div className="tabs-films">
-                                <h2 className="tabs-films__title">{ searchStr }</h2>
+                                <h2 className="tabs-films__title">Поиск: { searchStr }</h2>
                                 <div id="js-slider-search" className='slider-carusel'>
                                     <div className='slider-conteiner'>
                                         <div id="js-slider-content-search" className='slider-content'>

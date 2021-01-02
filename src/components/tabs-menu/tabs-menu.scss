@@ -25,10 +25,21 @@
     padding: 5px 0;
     cursor: pointer;
 
+    @media (max-width: 460px) {
+      font-size: 20px;
+    }
 
     &_active {
       color: var(--color-red-e5);
       border-bottom: 2px solid var(--color-red-e5);
+    }
+  }
+}
+
+.tabs-films{
+  &__title {
+    @media (max-width: 460px) {
+      text-align: center;
     }
   }
 }

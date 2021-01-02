@@ -3,6 +3,11 @@
     align-items: center;
     text-decoration: none;
 
+    @media (max-width: 1020px) {
+        position: absolute;
+        left: 0;
+    }
+
     &__name {
         font-family: 'Rubik';
         font-weight: 500;
@@ -10,6 +15,10 @@
         line-height: 24px;
         color: var(--color-gray-33);
         padding-left: 10px;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
 }
 
