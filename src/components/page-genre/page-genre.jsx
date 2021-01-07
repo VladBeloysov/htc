@@ -1,12 +1,19 @@
 import React from 'react';
+import PropType from "prop-types";
 import { connect } from 'react-redux';
 import { block } from 'bem-cn';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SliderCarusel } from "../../lib/slider/slider";
 import '../../lib/slider/slider.scss';
 
 const cn = block('slider-films-new');
 class PageGenre extends React.Component {
+    static propTypes = {
+        films: PropType.arrayOf(PropType.object).isRequired,
+        filmsGenre: PropType.arrayOf(PropType.object).isRequired,
+        match: PropType.object
+    };
+
     componentDidMount() {
         new SliderCarusel("js-slider-content-genre", "js-slider-genre", "slider-films-new__item");
     }

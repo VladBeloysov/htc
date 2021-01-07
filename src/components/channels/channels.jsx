@@ -3,9 +3,14 @@ import { block } from 'bem-cn';
 import './channels.scss';
 import Icon from '../icon/icon';
 import {connect} from "react-redux";
+import PropType from "prop-types";
 
 const cn = block('channels');
 class Channels extends React.Component {
+    static propTypes = {
+        channels: PropType.arrayOf(PropType.object).isRequired,
+    };
+
     constructor(props) {
         super(props);
     }

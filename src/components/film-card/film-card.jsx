@@ -1,9 +1,14 @@
 import React from 'react';
 import { block } from 'bem-cn';
 import './film-card.scss'
+import PropType from "prop-types";
 
 const cn = block('film-card');
 class FilmCard extends React.Component {
+    static propTypes = {
+        film: PropType.object.isRequired
+    };
+
     render() {
         const { film } = this.props;
         return (

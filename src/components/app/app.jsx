@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from "prop-types";
+import PropType from "prop-types";
 import isNil from "lodash/isNil";
 import './app.scss';
-import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE, PAGE_GENRE, PAGE_SEARCH } from '../../constants/routes';
+import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE, PAGE_GENRE } from '../../constants/routes';
 import { authorizationUser, addMessageError, addSearchStr } from "../../store/actions";
 import { NOT_CORRECT_PASSWORD, NOT_CORRECT_USER } from '../../constants/locale/ru';
 
@@ -18,8 +18,12 @@ import PageGenre from '../page-genre/page-genre';
 
 class App extends React.Component {
     static propTypes = {
-        authorizationUser: PropTypes.func.isRequired,
-        users: PropTypes.array.isRequired,
+        authorizationUser: PropType.func.isRequired,
+        addMessageError: PropType.func,
+        addSearchStr: PropType.func,
+        users: PropType.array.isRequired,
+        currentUser: PropType.number,
+        messageError: PropType.string,
     };
 
     constructor(props) {
@@ -138,7 +142,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { users: state.users, currentUser: state.currentUser, messageError: state.messageError, redirect: state.redirect};
+    return { users: state.users, currentUser: state.currentUser, messageError: state.messageError };
 };
 
 const mapDispatchToProps = { authorizationUser, addMessageError, addSearchStr };

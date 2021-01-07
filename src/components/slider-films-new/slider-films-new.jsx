@@ -10,8 +10,8 @@ const cn = block('slider-films-new');
 
 class SliderFilmsNew extends React.Component {
     static propTypes = {
-        films: PropType.array.isRequired,
-        filmsSearch: PropType.array
+        films: PropType.arrayOf(PropType.object).isRequired,
+        searchStr: PropType.string
     };
 
     componentDidMount() {

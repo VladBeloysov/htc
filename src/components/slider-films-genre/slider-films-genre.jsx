@@ -3,13 +3,12 @@ import { block } from 'bem-cn';
 import './slider-films-genre.scss';
 import PropType from "prop-types";
 import { SliderCarusel } from "../../lib/slider/slider";
-import { PAGE_GENRE } from "../../constants/routes";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const cn = block('slider-films-genre');
 class SliderFilmsGenre extends React.Component {
     static propTypes = {
-        filmsGenre: PropType.array.isRequired
+        filmsGenre: PropType.arrayOf(PropType.object).isRequired
     };
 
     constructor(props) {

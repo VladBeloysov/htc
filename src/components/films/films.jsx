@@ -10,6 +10,7 @@ class Films extends React.Component {
     static propTypes = {
         films: PropType.arrayOf(PropType.object).isRequired,
         filmsGenre: PropType.arrayOf(PropType.object).isRequired,
+        searchStr: PropType.string
     };
 
     constructor(props) {

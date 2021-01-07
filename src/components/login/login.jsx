@@ -3,9 +3,16 @@ import { block } from 'bem-cn';
 import './login.scss';
 import {connect} from "react-redux";
 import { editNameUser } from "../../store/actions/index";
+import PropType from "prop-types";
 
 const cn = block('login');
 class Login extends React.Component {
+    static propTypes = {
+        users: PropType.arrayOf(PropType.object).isRequired,
+        currentUser: PropType.number,
+        editNameUser: PropType.func.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.state = { edit: false, newName: null };

@@ -1,5 +1,4 @@
 import React from 'react';
-import icoLogo from '../../assets/static/svg/sign.svg';
 import Icon from '../icon/icon';
 import { block } from 'bem-cn';
 import { MAIN_PAGE_ROUTE } from "../../constants/routes";

@@ -14,7 +14,7 @@ class PageDetail extends React.Component {
         films: PropType.array.isRequired,
         comments: PropType.array.isRequired,
         users: PropType.array.isRequired,
-        currentUser: PropType.any
+        currentUser: PropType.number
     };
 
     static defaultProps = {

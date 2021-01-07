@@ -7,7 +7,8 @@ const cn = block('auth-btn');
 class AuthBtn extends React.Component {
     static propTypes = {
         text: PropTypes.string.isRequired,
-        onClick: PropTypes.func.isRequired
+        onClick: PropTypes.func.isRequired,
+        login: PropTypes.bool
     };
 
     handleClick = () => {

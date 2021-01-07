@@ -10,9 +10,11 @@ class Comments extends React.Component {
     static propTypes = {
         onCommentAdd: PropType.func.isRequired,
         onCommentDelete: PropType.func.isRequired,
-        users: PropType.array.isRequired,
-        currentUser: PropType.any,
-        text: PropType.string
+        users: PropType.arrayOf(PropType.object).isRequired,
+        currentUser: PropType.number,
+        text: PropType.string,
+        filmId: PropType.string.isRequired,
+        comments: PropType.arrayOf(PropType.object).isRequired
     };
 
     static defaultProps = {

@@ -4,9 +4,14 @@ import TabsMenu from '../tabs-menu/tabs-menu';
 import TabsContent from '../tabs-content/tabs-content';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import PropType from "prop-types";
 
 const cn = block('page-main');
 class PageMain extends React.Component {
+    static propTypes = {
+        films: PropType.arrayOf(PropType.object).isRequired,
+    };
+
     state = {
         tabs: ['Фильмы', 'Телеканалы'],
         activeTab: 0

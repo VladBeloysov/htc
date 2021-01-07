@@ -14,6 +14,7 @@ class Header extends React.Component {
     static propTypes = {
         logIn: PropTypes.func.isRequired,
         logOut: PropTypes.func.isRequired,
+        currentUser: PropTypes.number
     };
 
 

@@ -5,6 +5,9 @@ import IconsSVG from './icons.svg';
 class Icon extends React.PureComponent {
     static propTypes = {
         className: PropTypes.object.isRequired,
+        name: PropTypes.string.isRequired,
+        width: PropTypes.string.isRequired,
+        height: PropTypes.string.isRequired
     }
 
     render() {

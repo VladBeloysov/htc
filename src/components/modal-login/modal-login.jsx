@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { block } from 'bem-cn';
 import './modal-login.scss';
 import AuthBtn from "../auth-btn/auth-btn";
-import icoCheck from "../../assets/static/svg/check.svg";
 import Icon from "../icon/icon";
 import PropType from "prop-types";
 

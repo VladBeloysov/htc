@@ -1,9 +1,14 @@
 import React from 'react';
 import { block } from 'bem-cn';
 import './search.scss';
+import PropType from "prop-types";
 
 const cn = block('search');
 class Search extends React.Component {
+    static propTypes = {
+        onFormSearch: PropType.func.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.state = { search: '' };
@@ -13,7 +18,6 @@ class Search extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onFormSearch({ str: this.state.search });
-        // this.setState({ search: '' });
     };
 
     handleChangeSearch = (event) => {
