@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import './app.scss';
 import { MAIN_PAGE_ROUTE, DETAIL_PAGE_ROUTE, PAGE_GENRE, PAGE_SEARCH } from '../../constants/routes';
-import { authorizationUser, addMessageError, redirectToSearch, addSearchStr } from "../../store/actions";
+import { authorizationUser, addMessageError, addSearchStr } from "../../store/actions";
 import { NOT_CORRECT_PASSWORD, NOT_CORRECT_USER } from '../../constants/locale/ru';
 
 import Header from '../header/header';
@@ -15,7 +15,6 @@ import PageMain from '../page-main/page-main';
 import PageDetail from '../page-detail/page-detail';
 import PageError from '../page-error/page-error';
 import PageGenre from '../page-genre/page-genre';
-import PageSearch from '../page-search/page-search';
 
 class App extends React.Component {
     static propTypes = {
@@ -94,27 +93,16 @@ class App extends React.Component {
 
     handleSearch = (search) => {
         this.props.addSearchStr(search.str);
-        this.props.redirectToSearch(true);
     };
 
     render() {
         const { activeModal } = this.state;
-        const { messageError, redirect, currentUser } = this.props;
+        const { messageError, currentUser } = this.props;
 
         return (
             <div className='app'>
                 <Header currentUser={ currentUser } onFormSearch={ this.handleSearch } logIn={ this.handleLogIn } logOut={ this.handleLogOut } />
                 <Switch>
-                    {
-                        (redirect) ?
-                            <div>
-                                <Route
-                                    path="/search"
-                                    component={ PageSearch }
-                                />
-                                <Redirect component={ PageSearch } to={`/search`} />
-                            </div> : null
-                    }
                     <Route
                         exact={ true }
                         path={ MAIN_PAGE_ROUTE }
@@ -153,5 +141,5 @@ const mapStateToProps = (state) => {
     return { users: state.users, currentUser: state.currentUser, messageError: state.messageError, redirect: state.redirect};
 };
 
-const mapDispatchToProps = { authorizationUser, addMessageError, redirectToSearch, addSearchStr };
+const mapDispatchToProps = { authorizationUser, addMessageError, addSearchStr };
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

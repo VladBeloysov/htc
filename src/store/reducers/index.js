@@ -3,7 +3,6 @@ import {
     ACTIONS_MESSAGE_ERROR,
     ACTIONS_ADD_COMMENT,
     ACTIONS_DELETE_COMMENT,
-    ACTIONS_REDIRECT_TO_SEARCH,
     ACTIONS_ADD_SEARCH_STR,
     ACTIONS_EDIT_NAME_USER
 } from '../../constants/actions';
@@ -49,13 +48,6 @@ export default function (state = {}, { type, payload }) {
             return {
                 ...state,
                 comments: state.comments.filter(item => item.id !== Number.parseInt(payload))
-            };
-        }
-
-        case ACTIONS_REDIRECT_TO_SEARCH: {
-            return {
-                ...state,
-                redirect: payload
             };
         }
 

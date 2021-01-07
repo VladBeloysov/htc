@@ -10,7 +10,6 @@ class Films extends React.Component {
     static propTypes = {
         films: PropType.arrayOf(PropType.object).isRequired,
         filmsGenre: PropType.arrayOf(PropType.object).isRequired,
-        filmsNew: PropType.arrayOf(PropType.number).isRequired
     };
 
     constructor(props) {
@@ -18,12 +17,11 @@ class Films extends React.Component {
     }
 
     render() {
-        const { films, filmsGenre, filmsNew } = this.props;
-
+        const { films, filmsGenre, searchStr } = this.props;
         return (
             <div className={ cn() }>
                 <h2 className={ cn('title') }>Новинки</h2>
-                <SliderFilmsNew films={ films } filmsNew={ filmsNew } />
+                <SliderFilmsNew films={ films } searchStr={ searchStr } />
                 <h2 className={ cn('title') }>Жанры</h2>
                 <SliderFilmsGenre filmsGenre={ filmsGenre } />
             </div>
@@ -32,7 +30,7 @@ class Films extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { films: state.films, filmsGenre: state.filmsGenre, filmsNew: state.filmsNew };
+    return { filmsGenre: state.filmsGenre, films: state.films, searchStr: state.searchStr };
 };
 
 export default connect(mapStateToProps)(Films);

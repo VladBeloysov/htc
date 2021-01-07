@@ -2,7 +2,7 @@ import React from 'react';
 import { block } from 'bem-cn';
 import TabsMenu from '../tabs-menu/tabs-menu';
 import TabsContent from '../tabs-content/tabs-content';
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 const cn = block('page-main');
@@ -17,12 +17,8 @@ class PageMain extends React.Component {
     };
 
     render() {
-        // const { redirectToSearch, searchStr } = this.props;
         const { tabs, activeTab } = this.state;
 
-        // if (searchStr)  {
-        //     return <Redirect to={`/search/:${ searchStr }`}/>
-        // }
 
         return (
             <div className="container">
@@ -32,7 +28,9 @@ class PageMain extends React.Component {
                         activeTab={ activeTab }
                         onChangeTab={ this.onChangeTab }
                     />
-                    <TabsContent activeTab={ activeTab } />
+                    <TabsContent
+                        activeTab={ activeTab }
+                    />
                 </div>
             </div>
         );
@@ -40,7 +38,7 @@ class PageMain extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { searchStr: state.searchStr, redirectToSearch: state.redirectToSearch };
+    return {  films: state.films };
 };
 
 export default withRouter(connect(mapStateToProps)(PageMain));
