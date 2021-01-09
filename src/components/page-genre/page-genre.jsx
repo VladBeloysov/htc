@@ -32,7 +32,7 @@ class PageGenre extends React.Component {
                                 <div className='slider-conteiner'>
                                     <div id="js-slider-content-genre" className='slider-content'>
                                         {
-                                            resGenre.map((item, index) =>
+                                            (resGenre.length > 0) ? resGenre.map((item, index) =>
                                                 <Link className={ cn('item') } to={ `/detail/${ item.id }` } key={ index }>
                                                     <div className={ cn('image') } style={ {backgroundImage: 'url(' + item.img + ')'} }>
                                                         <div className={ cn('desc-wrap') }>
@@ -43,6 +43,7 @@ class PageGenre extends React.Component {
                                                     </div>
                                                     <div className={ cn('title') }>{ item.title }</div>
                                                 </Link>)
+                                            : <p>Нет фильмов с данным жанром</p>
                                         }
                                     </div>
                                 </div>
