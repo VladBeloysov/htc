@@ -6,7 +6,6 @@ import App from './components/app/app';
 import { configureStore } from './store/store';
 import './constants/constants.scss';
 import './constants/fonts.scss';
-import {createStore} from "redux";
 
 const store = configureStore();
 const saveState = (state) => {
